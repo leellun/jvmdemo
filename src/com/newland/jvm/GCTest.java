@@ -5,6 +5,13 @@ import java.lang.management.ManagementFactory;
 import java.util.List;
 
 public class GCTest {
+	
+	//默认收集器Parallel Scavenge      PS Scavenge/PS MarkSweep
+	//CMS垃圾收集器   -XX:+UseConcMarkSweepGC  ParNew/ConcurrentMarkSweep
+	//Serial垃圾收集器  -XX:+UseSerialGC Copy/MarkSweepCompact
+	//ParNew垃圾收集器 -XX:+UseParNewGC ParNew/MarkSweepCompact
+	//G1垃圾收集器  -XX:+UseG1GC   G1 Young Generation/G1 Old Generation
+	
 	public static void main(String[] args) {
 		List<GarbageCollectorMXBean> lists=ManagementFactory.getGarbageCollectorMXBeans();
 		for(GarbageCollectorMXBean bean:lists){
